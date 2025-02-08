@@ -20,14 +20,34 @@ int main()
 		cin >> tab[i];
 	}
 
+	int k;
+
 	// sortowanie
 	for (int i = 0; i < n; ++i)
 	{
-		for (int j = i; j < n; ++j)
+		k = i;
+
+		for (int j = i + 1; j < n; ++j)
 		{
-			if (tab[i] > tab[j])
-				swap(tab[i], tab[j]);
+
+			if (tab[j] < tab[k]) k = j;
 		}
+
+		swap(tab[k], tab[i]);
+
+	}
+
+	for (int i = 0; i < n; ++i)
+	{
+		k = i;
+
+		for (int j = i + 1; j < n; ++j)
+		{
+
+			if (tab[j] < tab[k]) k = j;
+		}
+
+		swap(tab[k], tab[i]);
 
 	}
 
