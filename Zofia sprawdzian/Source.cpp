@@ -1,43 +1,41 @@
 #include <iostream>
-#include <algorithm>
+#include <string>
 
 using namespace std;
 
-const int MAX = 1001;
+bool sprawdz(string str1)
+{
+	string str2;
 
-int tab[MAX];
+
+	for (int i = 0; i < str1.size(); ++i)
+	{
+		if (str1[i] != ' ')
+			str2.push_back(str1[i]);
+	}
+
+
+	int j = str2.size();
+
+	for (int i = 0; i < str2.size() / 2; ++i)
+	{
+		if (str2[i] != str2[j - i - 1])
+			return false;
+	}
+
+	return true;
+}
 
 int main()
 {
-	int n;
-
-	cin >> n;
-
-	// wczytaj
-
-	for (int i = 0; i < n; ++i)
-	{
-		cin >> tab[i];
-	}
-
-	// sortowanie
-	for (int i = 0; i < n; ++i)
-	{
-		for (int j = i; j < n; ++j)
-		{
-			if (tab[i] > tab[j])
-				swap(tab[i], tab[j]);
-		}
-
-	}
-
-	// wyswietl
-
-	for (int i = 0; i < n; ++i)
-	{
-		cout << tab[i] << " ";
-	}
+	string str;
 
 
+	getline(cin, str);
+
+	if (sprawdz(str))
+		cout << "No tak" << endl;
+	else
+		cout << "Nietsety nie" << endl;
 	return 0;
 }
