@@ -1,41 +1,32 @@
 #include <iostream>
-#include <string>
+#include <cstdlib>
 
 using namespace std;
 
-bool sprawdz(string str1)
-{
-	string str2;
-
-
-	for (int i = 0; i < str1.size(); ++i)
-	{
-		if (str1[i] != ' ')
-			str2.push_back(str1[i]);
-	}
-
-
-	int j = str2.size();
-
-	for (int i = 0; i < str2.size() / 2; ++i)
-	{
-		if (str2[i] != str2[j - i - 1])
-			return false;
-	}
-
-	return true;
-}
+const int MAX = 101;
 
 int main()
 {
-	string str;
+	int n;
+	int tab[MAX];
+
+	cin >> n;
+	//wczytaj
+	for (int i = 0; i < n; i++)
+	{
+		int t;
+		int suma = 0;
+
+		for (int j = 0; j < t; ++j)
+		{
+			cin >> tab[i];
+			suma += tab[i];
+		}
 
 
-	getline(cin, str);
 
-	if (sprawdz(str))
-		cout << "No tak" << endl;
-	else
-		cout << "Nietsety nie" << endl;
+	}
+
+
 	return 0;
 }
