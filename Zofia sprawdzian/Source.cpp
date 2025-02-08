@@ -1,26 +1,28 @@
 #include <iostream>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
 const int MAX = 1001;
 
-int tab[MAX];
+char tab[MAX];
 
 int main()
 {
 	int n;
 
-	cin >> n;
+	//cin >> n;
 
 	// wczytaj
 
-	for (int i = 0; i < n; ++i)
-	{
-		cin >> tab[i];
-	}
+	string str;
+
+	cin >> str;
 
 	int k;
+
+	n = str.size();
 
 	// sortowanie
 	for (int i = 0; i < n; ++i)
@@ -30,10 +32,10 @@ int main()
 		for (int j = i + 1; j < n; ++j)
 		{
 
-			if (tab[j] < tab[k]) k = j;
+			if (str[j] < str[k]) k = j;
 		}
 
-		swap(tab[k], tab[i]);
+		swap(str[k], str[i]);
 
 	}
 
@@ -44,19 +46,16 @@ int main()
 		for (int j = i + 1; j < n; ++j)
 		{
 
-			if (tab[j] < tab[k]) k = j;
+			if (str[j] < str[k]) k = j;
 		}
 
-		swap(tab[k], tab[i]);
+		swap(str[k], str[i]);
 
 	}
 
 	// wyswietl
 
-	for (int i = 0; i < n; ++i)
-	{
-		cout << tab[i] << " ";
-	}
+	cout << str << endl;
 
 
 	return 0;
